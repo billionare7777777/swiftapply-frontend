@@ -40,6 +40,7 @@ class ApplicationsApi {
           method: 'GET',
           headers: {
             'Content-Type': 'application/json',
+            'ngrok-skip-browser-warning': 'true'
           },
         }
       )
@@ -68,6 +69,7 @@ class ApplicationsApi {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json',
+          'ngrok-skip-browser-warning': 'true'
         },
       })
 
@@ -92,6 +94,7 @@ class ApplicationsApi {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
+          'ngrok-skip-browser-warning': 'true'
         },
         body: JSON.stringify({ status }),
       })

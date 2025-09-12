@@ -75,7 +75,8 @@ class ProfileService {
     
     return {
       'Content-Type': 'application/json',
-      'X-User-ID': userData.id.toString()
+      'X-User-ID': userData.id.toString(),
+      'ngrok-skip-browser-warning': 'true'
     }
   }
 

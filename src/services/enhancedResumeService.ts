@@ -19,12 +19,19 @@ export class EnhancedResumeService {
     }
   }
 
+  private getDefaultHeaders(): HeadersInit {
+    return {
+      'Content-Type': 'application/json',
+      'ngrok-skip-browser-warning': 'true'
+    }
+  }
+
   async getUserResumes(): Promise<Resume[]> {
     try {
       const response = await fetch(this.getApiUrl('/resumes/user'), {
         method: 'GET',
         headers: {
-          'Content-Type': 'application/json',
+          ...this.getDefaultHeaders(),
           'X-User-ID': this.getUserId()
         }
       })
@@ -46,7 +53,7 @@ export class EnhancedResumeService {
       const response = await fetch(this.getApiUrl(`/resumes/${resumeId}`), {
         method: 'GET',
         headers: {
-          'Content-Type': 'application/json',
+          ...this.getDefaultHeaders(),
           'X-User-ID': this.getUserId()
         }
       })
@@ -68,7 +75,7 @@ export class EnhancedResumeService {
       const response = await fetch(this.getApiUrl('/user/profile'), {
         method: 'GET',
         headers: {
-          'Content-Type': 'application/json',
+          ...this.getDefaultHeaders(),
           'X-User-ID': this.getUserId()
         }
       })
@@ -90,7 +97,7 @@ export class EnhancedResumeService {
       const response = await fetch(this.getApiUrl('/jobs/available'), {
         method: 'GET',
         headers: {
-          'Content-Type': 'application/json'
+          ...this.getDefaultHeaders()
         }
       })
 
@@ -136,7 +143,7 @@ export class EnhancedResumeService {
       const response = await fetch(this.getApiUrl('/resumes/generate-variants'), {
         method: 'POST',
         headers: {
-          'Content-Type': 'application/json',
+          ...this.getDefaultHeaders(),
           'X-User-ID': this.getUserId()
         },
         body: JSON.stringify({
@@ -178,7 +185,7 @@ export class EnhancedResumeService {
       const response = await fetch(this.getApiUrl('/resumes/save'), {
         method: 'POST',
         headers: {
-          'Content-Type': 'application/json',
+          ...this.getDefaultHeaders(),
           'X-User-ID': this.getUserId()
         },
         body: JSON.stringify({ resume: resumeData })
@@ -218,7 +225,7 @@ export class EnhancedResumeService {
       const response = await fetch(this.getApiUrl(`/jobs/${jobId}/analyze`), {
         method: 'POST',
         headers: {
-          'Content-Type': 'application/json',
+          ...this.getDefaultHeaders(),
           'Authorization': `Bearer ${localStorage.getItem('token')}`
         }
       })
@@ -240,7 +247,7 @@ export class EnhancedResumeService {
       const response = await fetch(this.getApiUrl('/resumes/clear-samples'), {
         method: 'POST',
         headers: {
-          'Content-Type': 'application/json',
+          ...this.getDefaultHeaders(),
           'X-User-ID': this.getUserId()
         }
       })

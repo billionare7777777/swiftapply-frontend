@@ -103,7 +103,8 @@ export const StepByStepResumeGenerator: React.FC = () => {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json',
-          'X-User-ID': user.id.toString()
+          'X-User-ID': user.id.toString(),
+          'ngrok-skip-browser-warning': 'true'
         }
       })
 

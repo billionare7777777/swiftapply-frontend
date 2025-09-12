@@ -1,7 +1,7 @@
 // API client configuration and base functionality
 
 const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || 'https://locust-one-mutt.ngrok-free.app/api'
-
+console.log(API_BASE_URL);
 export class ApiClient {
   private baseUrl: string
 
@@ -20,6 +20,7 @@ export class ApiClient {
     const defaultOptions: RequestInit = {
       headers: {
         'Content-Type': 'application/json',
+        'ngrok-skip-browser-warning': 'true',
         ...options.headers,
       },
     }
@@ -29,7 +30,6 @@ export class ApiClient {
     try {
       console.log(`Making API request to: ${url}`)
       const response = await fetch(url, config)
-      
       if (!response.ok) {
         console.error(`API request failed with status ${response.status}: ${response.statusText}`)
         throw new Error(`HTTP ${response.status}: ${response.statusText}`)

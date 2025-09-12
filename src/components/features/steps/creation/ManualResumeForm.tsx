@@ -166,6 +166,7 @@ export const ManualResumeForm: React.FC<ManualResumeFormProps> = ({
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
+          'ngrok-skip-browser-warning': 'true'
         },
         body: JSON.stringify({
           name: `${formData.firstName} ${formData.lastName}`.trim(),
