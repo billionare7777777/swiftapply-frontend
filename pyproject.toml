@@ -1,0 +1,20 @@
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ajag"
+version = "0.1.0"
+description = "Automated Job Application Gateway"
+requires-python = ">=3.8"
+
+[tool.pyright]
+include = ["."]
+exclude = ["**/node_modules", "**/__pycache__", "**/venv", "**/.next"]
+pythonPath = "backend"
+extraPaths = ["backend"]
+
+[tool.pylsp-mypy]
+enabled = true
+live_mode = true
+strict = true

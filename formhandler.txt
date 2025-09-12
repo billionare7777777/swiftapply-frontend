@@ -1,0 +1,21 @@
+First Name (Enter using your account information - first_name in the database)
+Last Name (Enter using your account information - last_name in the database)
+Preferred First Name (Enter using your account information - first_name in this case)
+Email (Enter using your account information - email in the database)
+Phone (Enter using your account information - phone_number in the database)
+LinkedIn Profile (Enter using your account information - linkedin in the database)
+Address Line 1 (Enter using your account information - location_city in the database)
+Address Line 1 (Do not enter)
+Website (Do not enter)
+City (Enter using your account information - location_city in the database)
+
+Resume/CV (First, press the "Enter Manually" button, and then use OpenAI to professionally create a resume that matches the job description in the text area displayed below. Keep the length to 3,000 to 5,000 characters. For career and education, use information from lesser-known companies or universities in your country.)
+Cover Letter (First, press the "Enter Manually" button and then use OpenAI to create a 500 to 2,000-character response in the text area displayed below. Use OpenAI to create a simple, one-sentence response to the job description.)
+
+For the remaining input fields (<div class="text-input-wrapper"> <input>) containing the above question, use OpenAI to generate a simple, one-sentence response to the question.
+
+For the remaining body input fields (<div class="text-input-wrapper"> <textarea>) containing the above question, use OpenAI to generate a simple, three-to-five sentence response to the question.
+
+For the remaining selection fields (<div class="select">) containing the above question, first click the input field. Then, select the first candidate from the list of candidates displayed.
+
+In the remaining fieldset fields (<fieldset class="checkbox" ...>) that pose the above question, select the first item among the <div class="checkbox__wrapper"> tags within them.
