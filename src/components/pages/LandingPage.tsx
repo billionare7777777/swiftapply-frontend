@@ -176,7 +176,7 @@ const LandingPage: React.FC = () => {
                 <Zap className="h-6 w-6 text-white" />
               </div>
               <div>
-                <h1 className="text-2xl font-bold text-white">SSSSwiftApply.ai</h1>
+                <h1 className="text-2xl font-bold text-white">SwiftApply.ai</h1>
                 <p className="text-sm text-gray-300">Automated Job Application</p>
               </div>
             </div>
