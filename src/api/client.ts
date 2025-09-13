@@ -1,6 +1,6 @@
 // API client configuration and base functionality
 
-const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || 'https://locust-one-mutt.ngrok-free.app/api'
+const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || 'https://chemurgic-scalably-selena.ngrok-free.dev/api'
 console.log(API_BASE_URL);
 export class ApiClient {
   private baseUrl: string

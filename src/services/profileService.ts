@@ -2,7 +2,7 @@
  * Profile Service - Handles profile data management
  */
 
-const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || 'https://locust-one-mutt.ngrok-free.app/api'
+const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || 'https://chemurgic-scalably-selena.ngrok-free.dev/api'
 
 export interface ProfileData {
   firstName: string

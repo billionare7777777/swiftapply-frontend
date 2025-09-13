@@ -178,7 +178,7 @@ export const CleanResumeGenerator: React.FC = () => {
     
     try {
       // Call the actual API for resume generation
-      const baseUrl = process.env.NEXT_PUBLIC_API_URL || 'https://locust-one-mutt.ngrok-free.app/api'
+      const baseUrl = process.env.NEXT_PUBLIC_API_URL || 'https://chemurgic-scalably-selena.ngrok-free.dev/api'
       const apiUrl = baseUrl.endsWith('/api') ? `${baseUrl}/resume/generate` : `${baseUrl}/api/resume/generate`
       const response = await fetch(apiUrl, {
         method: 'POST',

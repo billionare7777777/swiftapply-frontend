@@ -71,7 +71,7 @@ export const ComprehensiveDashboard: React.FC<ComprehensiveDashboardProps> = ({ 
               <h2 className="text-2xl font-bold text-white mb-2">Unable to Load Dashboard</h2>
               <p className="text-gray-300 mb-6">
                 {isConnectionError 
-                  ? 'Unable to connect to the backend server. Please make sure the backend server is running on https://locust-one-mutt.ngrok-free.app.'
+                  ? 'Unable to connect to the backend server. Please make sure the backend server is running on https://chemurgic-scalably-selena.ngrok-free.dev.'
                   : 'There was an error loading your comprehensive dashboard data.'
                 }
               </p>
@@ -81,7 +81,7 @@ export const ComprehensiveDashboard: React.FC<ComprehensiveDashboardProps> = ({ 
                     <strong>To start the backend server:</strong><br />
                     1. Open a terminal in the <code className="bg-black/20 px-2 py-1 rounded">backend</code> directory<br />
                     2. Run <code className="bg-black/20 px-2 py-1 rounded">python app.py</code><br />
-                    3. Wait for "Running on https://locust-one-mutt.ngrok-free.app" message
+                    3. Wait for "Running on https://chemurgic-scalably-selena.ngrok-free.dev" message
                   </p>
                 </div>
               )}

@@ -9,7 +9,7 @@
  * @returns The complete API URL
  */
 export function getApiUrl(endpoint: string): string {
-  const baseUrl = process.env.NEXT_PUBLIC_API_URL || 'https://locust-one-mutt.ngrok-free.app/api'
+  const baseUrl = process.env.NEXT_PUBLIC_API_URL || 'https://chemurgic-scalably-selena.ngrok-free.dev/api'
   
   // Remove leading slash from endpoint if present
   const cleanEndpoint = endpoint.startsWith('/') ? endpoint.slice(1) : endpoint

@@ -55,7 +55,7 @@ export const ScrapingResultsModal: React.FC<ScrapingResultsModalProps> = ({
   const fetchJobs = async () => {
     setLoading(true)
     try {
-      const baseUrl = process.env.NEXT_PUBLIC_API_URL || 'https://locust-one-mutt.ngrok-free.app/api'
+      const baseUrl = process.env.NEXT_PUBLIC_API_URL || 'https://chemurgic-scalably-selena.ngrok-free.dev/api'
       const jobsApiUrl = baseUrl.endsWith('/api') ? `${baseUrl}/jobs?limit=50` : `${baseUrl}/api/jobs?limit=50`
       const response = await fetch(jobsApiUrl)
       if (response.ok) {

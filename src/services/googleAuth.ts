@@ -91,7 +91,7 @@ class GoogleAuthService {
       console.log('Exchanging authorization code for tokens...')
 
       // Exchange authorization code for tokens
-      const baseUrl = process.env.NEXT_PUBLIC_API_URL || 'https://locust-one-mutt.ngrok-free.app/api'
+      const baseUrl = process.env.NEXT_PUBLIC_API_URL || 'https://chemurgic-scalably-selena.ngrok-free.dev/api'
       const tokenApiUrl = baseUrl.endsWith('/api') ? `${baseUrl}/auth/google/token` : `${baseUrl}/api/auth/google/token`
       const tokenResponse = await fetch(tokenApiUrl, {
         method: 'POST',

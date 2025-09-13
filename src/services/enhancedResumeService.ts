@@ -1,7 +1,7 @@
 import { Resume, UserData, Job } from '../components/features/StepByStepResumeGenerator'
 
 export class EnhancedResumeService {
-  private baseUrl = process.env.NEXT_PUBLIC_API_URL || 'https://locust-one-mutt.ngrok-free.app/api'
+  private baseUrl = process.env.NEXT_PUBLIC_API_URL || 'https://chemurgic-scalably-selena.ngrok-free.dev/api'
   
   // Helper method to construct API URLs correctly
   private getApiUrl(endpoint: string): string {

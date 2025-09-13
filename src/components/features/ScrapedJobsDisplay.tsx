@@ -132,7 +132,7 @@ export const ScrapedJobsDisplay: React.FC = () => {
       // More specific error messages
       const errorMessage = error instanceof Error ? error.message : 'Unknown error'
       if (errorMessage.includes('Failed to fetch')) {
-        alert('❌ Cannot connect to the server. Please make sure the backend is running on https://locust-one-mutt.ngrok-free.app')
+        alert('❌ Cannot connect to the server. Please make sure the backend is running on https://chemurgic-scalably-selena.ngrok-free.dev')
       } else if (errorMessage.includes('CORS')) {
         alert('❌ CORS error. Please check server configuration.')
       } else {
