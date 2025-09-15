@@ -144,7 +144,7 @@ export const Header: React.FC<HeaderProps> = ({ children }) => {
     try {
       // Call backend logout API if user is logged in
       if (user?.email) {
-        const baseUrl = process.env.NEXT_PUBLIC_API_URL || 'https://chemurgic-scalably-selena.ngrok-free.dev/api'
+        const baseUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000/api'
         const logoutApiUrl = baseUrl.endsWith('/api') ? `${baseUrl}/auth/logout` : `${baseUrl}/api/auth/logout`
         await fetch(logoutApiUrl, {
           method: 'POST',

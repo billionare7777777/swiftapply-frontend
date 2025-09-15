@@ -2,7 +2,7 @@
  * Profile Service - Handles profile data management
  */
 
-const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || 'https://chemurgic-scalably-selena.ngrok-free.dev/api'
+const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000/api'
 
 export interface ProfileData {
   firstName: string

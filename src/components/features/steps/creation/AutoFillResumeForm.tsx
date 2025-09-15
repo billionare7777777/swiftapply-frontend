@@ -190,7 +190,7 @@ export const AutoFillResumeForm: React.FC<AutoFillResumeFormProps> = ({
 
   const generateResumeWithOpenAI = async (template: string) => {
     try {
-      const baseUrl = process.env.NEXT_PUBLIC_API_URL || 'https://chemurgic-scalably-selena.ngrok-free.dev/api'
+      const baseUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000/api'
       const apiUrl = baseUrl.endsWith('/api') ? `${baseUrl}/resume/generate` : `${baseUrl}/api/resume/generate`
       const response = await fetch(apiUrl, {
         method: 'POST',

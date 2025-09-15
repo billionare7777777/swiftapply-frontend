@@ -30,7 +30,7 @@ export interface ApplicationsResponse {
 }
 
 class ApplicationsApi {
-  private baseUrl = process.env.NEXT_PUBLIC_API_URL || 'https://chemurgic-scalably-selena.ngrok-free.dev/api'
+  private baseUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000/api'
 
   async getApplications(userId: number, limit: number = 50, offset: number = 0): Promise<ApplicationsResponse> {
     try {

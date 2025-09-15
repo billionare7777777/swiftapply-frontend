@@ -39,7 +39,7 @@ import { applicationsApi, JobApplication } from '../../api/applicationsApi'
 interface ApplicationStats {
   total: number
   pending: number
-  accepted: number
+  completed: number
   rejected: number
   this_month: number
 }
@@ -50,7 +50,7 @@ const ApplicationsPage: React.FC = () => {
   const [stats, setStats] = useState<ApplicationStats>({
     total: 0,
     pending: 0,
-    accepted: 0,
+    completed: 0,
     rejected: 0,
     this_month: 0
   })
@@ -88,7 +88,7 @@ const ApplicationsPage: React.FC = () => {
     const newStats = {
       total: apps.length,
       pending: apps.filter(app => app.application_status === 'pending').length,
-      accepted: apps.filter(app => app.application_status === 'accepted').length,
+      completed: apps.filter(app => app.application_status === 'completed').length,
       rejected: apps.filter(app => app.application_status === 'rejected').length,
       this_month: apps.filter(app => new Date(app.applied_at) >= thisMonth).length
     }
@@ -100,7 +100,7 @@ const ApplicationsPage: React.FC = () => {
     switch (status) {
       case 'pending':
         return <Clock className="h-3 w-3 text-amber-500" />
-      case 'accepted':
+      case 'completed':
         return <CheckCircle className="h-3 w-3 text-green-500" />
       case 'rejected':
         return <XCircle className="h-3 w-3 text-red-500" />
@@ -113,7 +113,7 @@ const ApplicationsPage: React.FC = () => {
     switch (status) {
       case 'pending':
         return 'bg-amber-500/20 text-amber-300 border-amber-500/30'
-      case 'accepted':
+      case 'completed':
         return 'bg-green-500/20 text-green-300 border-green-500/30'
       case 'rejected':
         return 'bg-red-500/20 text-red-300 border-red-500/30'
@@ -230,8 +230,8 @@ const ApplicationsPage: React.FC = () => {
           <div className="bg-white/10 backdrop-blur-lg rounded-2xl p-6 border border-white/20 shadow-2xl hover:bg-white/15 transition-all duration-300 group">
             <div className="flex items-center justify-between">
               <div>
-                <p className="text-xs font-medium text-purple-200 mb-1">Accepted</p>
-                <p className="text-2xl font-bold text-green-400">{stats.accepted}</p>
+                <p className="text-xs font-medium text-purple-200 mb-1">completed</p>
+                <p className="text-2xl font-bold text-green-400">{stats.completed}</p>
               </div>
               <div className="w-10 h-10 bg-gradient-to-r from-green-500 to-emerald-500 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                 <CheckCircle className="h-5 w-5 text-white" />
@@ -284,7 +284,7 @@ const ApplicationsPage: React.FC = () => {
             >
               <option value="all" className="bg-slate-800">All Status</option>
               <option value="pending" className="bg-slate-800">Pending</option>
-              <option value="accepted" className="bg-slate-800">Accepted</option>
+              <option value="completed" className="bg-slate-800">completed</option>
               <option value="rejected" className="bg-slate-800">Rejected</option>
             </select>
           </div>
@@ -383,16 +383,16 @@ const ApplicationsPage: React.FC = () => {
                   <div className="mt-4">
                     <div className="flex items-center justify-between text-xs text-purple-300 mb-2">
                       <span>Application Progress</span>
-                      <span>{application.application_status === 'accepted' ? '100%' : application.application_status === 'rejected' ? '100%' : '50%'}</span>
+                      <span>{application.application_status === 'completed' ? '100%' : application.application_status === 'rejected' ? '100%' : '50%'}</span>
                     </div>
                     <div className="w-full bg-white/20 rounded-full h-2">
                       <div 
                         className={`h-2 rounded-full transition-all duration-500 ${
-                          application.application_status === 'accepted' ? 'bg-gradient-to-r from-green-500 to-emerald-500' :
+                          application.application_status === 'Completed' ? 'bg-gradient-to-r from-green-500 to-emerald-500' :
                           application.application_status === 'rejected' ? 'bg-gradient-to-r from-red-500 to-pink-500' :
                           'bg-gradient-to-r from-amber-500 to-orange-500'
                         }`}
-                        style={{ width: application.application_status === 'accepted' || application.application_status === 'rejected' ? '100%' : '50%' }}
+                        style={{ width: application.application_status === 'completed' || application.application_status === 'rejected' ? '100%' : '50%' }}
                       ></div>
                     </div>
                   </div>
