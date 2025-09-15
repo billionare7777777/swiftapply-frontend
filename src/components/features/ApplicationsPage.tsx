@@ -461,7 +461,7 @@ const ApplicationsPage: React.FC = () => {
                         Resume Used
                       </p>
                       <div className="text-sm text-purple-200 bg-white/5 rounded-xl p-4 max-h-40 overflow-y-auto leading-relaxed">
-                        {selectedApplication.resume.substring(0, 500)}...
+                        {selectedApplication.resume}
                       </div>
                     </div>
                   )}
@@ -473,7 +473,7 @@ const ApplicationsPage: React.FC = () => {
                         Cover Letter
                       </p>
                       <div className="text-sm text-purple-200 bg-white/5 rounded-xl p-4 max-h-40 overflow-y-auto leading-relaxed">
-                        {selectedApplication.cover_letter.substring(0, 500)}...
+                        {selectedApplication.cover_letter}
                       </div>
                     </div>
                   )}
